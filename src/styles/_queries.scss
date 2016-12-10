@@ -1,0 +1,122 @@
+@media screen and(min-width: 480px){
+	.logo{
+		padding-left: 2em;
+		padding-right: 2em;
+	}
+	.footer__wrap{padding: 0 2em;}
+}
+@media screen and(min-width: 640px){
+	.plan,
+	.member
+	{
+		width: 48%;
+		display: inline-block;
+	}
+}
+@media screen and(min-width: 768px){
+	.logo{
+		display: inline-block;
+		&__hamburger{display: none;}
+	}
+	.nav{
+		float: right;
+		padding: 0 35px 0 0;
+
+		&--hidden{display: inline-block;}
+		&__elem{display: inline-block;}
+		&__link{padding: 26px 1em;}
+	}
+}
+@media screen and(min-width: 920px){
+
+	.plans{
+		padding: 7em 10% 4em;
+	}
+	.team{
+		padding: 2em 0 5em;
+		h2{
+			font-size: 42px;
+			margin: 2em 0em 3em;
+		}
+	}
+
+	
+	.banner__content{
+		h1{
+			font-size: 98px;
+		}
+		span{
+			width: 28%;
+			line-height: 1.5em;
+			font-size: 46px;
+			margin: 0.5em auto;
+		}
+		a{
+			padding: 18px 40px;
+			font-size: 56px;
+		}
+		
+	}
+
+
+	.logo{
+		padding: 2em 0 2em 4em;
+	}
+	
+	.nav{
+		&__link{
+			font-size: 15px;
+			padding: 44px 2em 42px;
+		}
+	}
+
+	.footer{
+		padding: 4em 0;
+		&__title{
+			font-size: 42px;
+			margin: 0 0 2em;
+		}
+	}
+	.connect{
+		width: 48%;
+		display: inline-block;
+		text-align: left;
+		&__posted{
+			li{margin-bottom: .5em;}
+		}
+		&__text{
+			margin: 0 0 2em 0;
+		}
+	}
+	.form{
+		width: 48%;
+		display: inline-block;
+		vertical-align: top;
+		text-align: right;
+		padding-left: .5em;
+
+		&__name{
+			width: 47%;
+			margin-right: 3%;
+			margin-bottom: 4%;
+		}
+		&__email{
+			width: 48%;
+		}
+		&__text{
+			margin-bottom: 4%;
+			min-height: 180px;
+		}
+		&__submit{
+			padding: 12px 3em;
+		}
+	}
+}
+@media screen and(min-width: 960px){
+	.plan{ width: 32%; }
+	.member{ width: 24%; }
+}
+@media screen and(min-width: 1440px){
+	.team__wrap,
+	.footer__wrap{padding: 0 135px;}
+}
