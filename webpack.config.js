@@ -2,8 +2,6 @@ let path = require('path');
 let webpack = require('webpack');
 let ExtractTextPlugin = require('extract-text-webpack-plugin'); //separate css from js
 
-// let extractCSS = new ExtractTextPlugin('bundle.min.css');
-// let extractSCSS = new ExtractTextPlugin('bundle.min.css');
 
 let production = new webpack.DefinePlugin({
   'process.env': { NODE_ENV: JSON.stringify('production') }
@@ -23,9 +21,17 @@ module.exports = {
       { 
         test: /\.scss$/i, 
         loader: ExtractTextPlugin.extract("style-loader", "css-loader!sass-loader")
-        // loader: 'style-loader!css-loader!sass-loader' 
       },
       
+      // IMG
+      { 
+        test: /.*\.(gif|png|jpe?g|svg)$/i, 
+        loaders: [
+          "file?name=img/[name].[ext]",
+          "image-webpack?optimizationLevel=7&progressive=true"
+        ]
+      },
+
       // FONTS
       { 
         test: /.*\.(ttf|eot|woff2?|svg)(\?.*$|$)/i,
@@ -34,10 +40,8 @@ module.exports = {
     ],
   },
   plugins: [
-    // extractCSS, 
-    new ExtractTextPlugin('bundle.min.css')
-    // production,
-    // new webpack.optimize.UglifyJsPlugin()
+    new ExtractTextPlugin('bundle.min.css'),
+    new webpack.optimize.UglifyJsPlugin()
   ]
 };
 

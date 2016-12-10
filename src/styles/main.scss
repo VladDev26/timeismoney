@@ -6,7 +6,7 @@
 body{ font-family: $font1; }
 *{ box-sizing: border-box; text-decoration: none; }
 
-// .wrapper{max-width: 1440px; margin: 0 auto;}
+.wrapper{max-width: 1440px; margin: 0 auto;}
 
 // ------------------------- HEADER -------------------------------
 	.header{
@@ -62,6 +62,7 @@ body{ font-family: $font1; }
 		height: 566px;
 		margin: 0 auto;
 		&__wrap{
+			background: $color5;
 			position: absolute; 
 			overflow: hidden; 
 			left: 0px; 
@@ -86,14 +87,14 @@ body{ font-family: $font1; }
 
 			h1{
 				font-weight: $semi-bold;
-				font-size: 62px;
+				font-size: 98px;
 			}
 			span{
 				display: block;
-				margin: 1em auto 2.5em;
+				margin: 0.5em auto;
 				width: 46%;
 				line-height: 1.5em;
-				font-size: 22px;
+				font-size: 46px;
 			}
 			a{
 				font-weight: $semi-bold;
@@ -103,20 +104,21 @@ body{ font-family: $font1; }
 				border-radius: 3px;
 				padding: 18px 40px;
 				border: 3px solid #fff;
-				font-size: 26px;
+				font-size: 56px;
 
 				&:hover{
 					@include opacity(0.7);
 				}
 			}
 		}
+		
 
 		
 		&__arr{
 			position: absolute;
 			z-index: 2;
 			top: 50%;
-			font-size: 52px;
+			font-size: 84px;
 			cursor: pointer;
 			color: $color1;
 			
@@ -255,8 +257,7 @@ body{ font-family: $font1; }
 	.footer{
 		text-align: center;
 		padding: 2em 0;
-
-		background: url('http://vladdev.zzz.com.ua/examples/timeismoney/img/footer_bg.jpg');
+		background: $color5 url('../img/footer_bg.jpg');
 		background-position: center;
 		background-repeat: no-repeat;
 		&__title{
@@ -381,11 +382,6 @@ body{ font-family: $font1; }
 	}
 // ----------------------- end FOOTER -------------------------------
 
-
-// .header__wrap
-// .banner__wrap
-// .__wrap
-// .header__wrap
 
  
 @import 'queries';
