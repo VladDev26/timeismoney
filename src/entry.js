@@ -1,7 +1,12 @@
 "use strict";
 
+
+require('../index.html'); // load all images from index.html
+
+
 require("reset-css/_reset.scss");
 require("./styles/main.scss");
+
 
 var $ = require('jquery');
 require('jssorslider');

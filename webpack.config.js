@@ -12,7 +12,7 @@ module.exports = {
   entry: path.resolve(__dirname + '/src/entry.js'),
   output: {
     path: 'assets',
-    filename: 'bundle.min.js',
+    filename: 'js/bundle.min.js',
     publicPath: '/assets/'
   },
   
@@ -23,24 +23,29 @@ module.exports = {
         loader: ExtractTextPlugin.extract("style-loader", "css-loader!sass-loader")
       },
       
-      // IMG
-      { 
-        test: /.*\.(gif|png|jpe?g|svg)$/i, 
-        loaders: [
-          "file?name=img/[name].[ext]",
-          "image-webpack?optimizationLevel=7&progressive=true"
-        ]
-      },
 
       // FONTS
       { 
         test: /.*\.(ttf|eot|woff2?|svg)(\?.*$|$)/i,
         loader: "file?name=fonts/[name]/[name].[ext]"
+      },
+
+      // HTML
+      { 
+        test: /\.html$/i,
+        loader: "html"
+      },
+
+
+       // IMG
+      { 
+        test: /.*\.(gif|png|jpg)$/i, 
+        loader: "file?name=img/[name].[ext]"
       }
     ],
   },
   plugins: [
-    new ExtractTextPlugin('bundle.min.css'),
+    new ExtractTextPlugin('styles/bundle.min.css'),
     new webpack.optimize.UglifyJsPlugin()
   ]
 };
