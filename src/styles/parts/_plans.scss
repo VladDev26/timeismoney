@@ -1,0 +1,64 @@
+.plans{
+	background: $color4;
+	padding: 2em 5% 0;
+	&__wrap{
+		text-align: justify;
+		&:after{
+		    content: '';
+		    display: inline-block;
+		    width: 100%;
+		}
+	}
+}
+.plan{
+	text-align: center;
+	// padding: 0 0 2em;
+	margin: 0 0 2em;
+
+	&:hover &__name,
+	&:hover &__link{
+		background: $color2; 
+		@include transition(all .3s ease);
+	}
+	
+	&__name{
+		font-size: 26px;
+		background: $color5;
+		color: $color1;
+		padding: 1em 0;
+
+		@include transition(all .3s ease);
+		&--blue{background: $color2;}
+	}
+	&__text{
+		font-size: 14px;
+		background: $color1;
+		color: $color8;
+		padding: 1em 0;
+		border-bottom: 1px solid $color7;
+	}
+	&__price{
+		font-size: 20px;
+		background: $color6;
+		color: $color5;
+		padding: 1em 0;
+		border-bottom: 1px solid $color7;
+	}
+	&__buy{
+		background: $color6;
+		padding: 1em 0;
+	}
+	&__link{
+		display: inline-block;
+		text-decoration: none;
+		color: $color1;
+		background: $color9;
+		font-size: 17px;
+		border-radius: 3px;
+		padding: .5em 2em;
+		// &:hover{
+		// 	background: $color2; 
+		// 	@include transition(all .3s ease);
+		// }
+	}
+}

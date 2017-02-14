@@ -1,0 +1,50 @@
+.header{
+	background: $color1;
+	&__wrap{ @extend %clearfix; }
+}
+.logo{
+	padding: 1em 2em 15px;
+
+	&__link{
+		display: inline-block;
+		&:hover{ @include opacity(0.7); };
+	}
+
+	&__hamburger{
+		float: right;
+		cursor: pointer;
+		display: inline-block;
+		font-size: 38px;
+
+		@include icomoon;
+		&:hover{ @include opacity(0.5); };
+		&:before{content: "\e900";}
+	}
+
+	@extend %clearfix;
+}
+.nav{
+	&--hidden{
+		display: none;
+	}
+	&__list{text-align: center;}
+	&__elem{
+		display: block;
+	}
+	&__link{
+		padding: 1em;
+		color: $color10;
+		display: block;
+		border-bottom: 3px solid transparent;
+		&.active{
+			background: $color6;
+			color: $color2;
+			border-bottom: 3px solid $color2;
+		}
+		&:hover{
+			background: $color6;
+			color: $color2;
+			border-bottom: 3px solid $color2;
+		}
+	}
+}
