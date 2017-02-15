@@ -4,32 +4,25 @@
 
 
 body{ font-family: $font1; }
-*{ box-sizing: border-box; text-decoration: none; }
+*{box-sizing: border-box; margin:0; padding:0; }
 a{text-decoration: none;display: inline-block;}
 
 .wrapper{max-width: 1440px; margin: 0 auto;}
-
-// ------------------------- HEADER -------------------------------
-@import './parts/_header';
-
-// ------------------------- BANNER -------------------------------
-@import './parts/_banner';
-
-// ----------------------- PLANS -------------------------------
-@import './parts/_plans';
-
-// ----------------------- TEAM -------------------------------
-@import './parts/_team';
-
-// ------------------------- FOOTER -------------------------------
-@import './parts/_footer';
+.container{
+	max-width: 1170px; 
+	margin: 0 auto; 
+	padding: 0 24px;
+	@include mQ(1218px){padding: 0;}
+}
 
 
-@import './parts/_slider';
+@import './parts/header';
+@import './parts/carousel';
+@import './parts/plans';
+@import './parts/team';
+@import './parts/footer';
+	@import './parts/form';
 
- 
-// ------------------------- media queries -------------------------------
-@import 'queries';
 
 
 

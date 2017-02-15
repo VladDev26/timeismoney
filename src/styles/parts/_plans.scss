@@ -1,26 +1,31 @@
 .plans{
 	background: $color4;
-	padding: 2em 5% 0;
+	padding: 4em 0;
+	@include mQ(576px){ padding: 4.5em 0 3em; }
+
 	&__wrap{
-		text-align: justify;
-		&:after{
-		    content: '';
-		    display: inline-block;
-		    width: 100%;
+		font-size: 0;
+	}
+	&__item{
+		font-size: 1rem;
+		padding: 0 0 1em;
+		margin: 0 auto;
+		display: inline-block;
+		width: 100%;
+		text-align: center;
+		vertical-align: top;
+		@include mQ(576px, 799px){ 
+			@include grid(2, 2%)
+		};
+		@include mQ(800px){
+			@include grid(3, 3%)
+		};
+		&:hover .plans__name,
+		&:hover .plans__link{
+			background: $color2; 
+			@include transition(all .3s ease);
 		}
 	}
-}
-.plan{
-	text-align: center;
-	// padding: 0 0 2em;
-	margin: 0 0 2em;
-
-	&:hover &__name,
-	&:hover &__link{
-		background: $color2; 
-		@include transition(all .3s ease);
-	}
-	
 	&__name{
 		font-size: 26px;
 		background: $color5;
@@ -56,9 +61,5 @@
 		font-size: 17px;
 		border-radius: 3px;
 		padding: .5em 2em;
-		// &:hover{
-		// 	background: $color2; 
-		// 	@include transition(all .3s ease);
-		// }
 	}
 }

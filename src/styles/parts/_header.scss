@@ -3,7 +3,13 @@
 	&__wrap{ @extend %clearfix; }
 }
 .logo{
-	padding: 1em 2em 15px;
+	padding: 1em 0 15px;
+	@include mQ(768px){
+		display: inline-block;
+	}
+	@include mQ(920px){
+		padding: 2em 0;
+	}
 
 	&__link{
 		display: inline-block;
@@ -19,10 +25,15 @@
 		@include icomoon;
 		&:hover{ @include opacity(0.5); };
 		&:before{content: "\e900";}
+
+		@include mQ(768px){
+			display: none;
+		}
 	}
 
 	@extend %clearfix;
 }
+
 .nav{
 	&--hidden{
 		display: none;
@@ -36,15 +47,37 @@
 		color: $color10;
 		display: block;
 		border-bottom: 3px solid transparent;
-		&.active{
-			background: $color6;
-			color: $color2;
-			border-bottom: 3px solid $color2;
+		&.active{color: $color2;}
+		&:hover{color: $color2;}
+	}
+
+
+	@include mQ(768px){
+		float: right;
+		display: inline-block;
+
+		&__link{
+			padding: 26px 1em;
+			&.active{
+				background: $color6;
+				color: $color2;
+				border-bottom: 3px solid $color2;
+			}
+			&:hover{
+				background: $color6;
+				color: $color2;
+				border-bottom: 3px solid $color2;
+			}
 		}
-		&:hover{
-			background: $color6;
-			color: $color2;
-			border-bottom: 3px solid $color2;
+		&__elem{
+			margin: 0 -4px 0 0;
+			display: inline-block;
+		}
+	}
+	@include mQ(920px){
+		&__link{
+			font-size: 15px;
+			padding: 44px 2em 42px;
 		}
 	}
 }

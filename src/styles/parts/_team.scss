@@ -1,17 +1,33 @@
 .team{
-	text-align: center;
 	background: $color1;
 	color: $color11;
 	padding: 2em 0;
-	h2{ font-size: 2em; }
-}
-.member{
-	padding: 1em 0;
+	@include mQ(920px){ padding: 2em 0 5em; }
+
+	h2{
+		margin: 0 0 1em;
+		font-size: 2em;
+		text-align: center;
+		@include mQ(920px){ 
+			font-size: 2em;
+			margin: 1em 0 2em; 
+		}
+	}
+	
+	&__item{
+		text-align: center;
+		padding: 1em 0;
+		display: inline-block;
+		width: 100%;
+
+		@include mQ(640px){ width: 50%; }
+		@include mQ(960px){ width: 25%; }
+	}
 	&__link{
 		position: relative;
 		display: inline-block;
 		border-radius:50%;
-		&:hover > .member__plus{
+		&:hover > .team__plus{
 			display: block;
 		}
 	}
@@ -26,8 +42,6 @@
 		width: 100%;
 		position: absolute;
 		top: 50%;
-		-webkit-transform: perspective(1px) translateY(-50%);
-		-ms-transform: perspective(1px) translateY(-50%);
 		transform: perspective(1px) translateY(-50%);
 	}
 	&__name{

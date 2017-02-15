@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run build",
-    "build": "webpack --config webpack.config.js && webpack-dev-server --colors --no-info"
+    "build": "webpack --config webpack.config.js && webpack-dev-server --colors --no-info",
+    "prod": "webpack -p"
   },
   "keywords": [],
   "author": "",
